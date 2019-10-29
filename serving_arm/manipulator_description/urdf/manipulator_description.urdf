@@ -88,7 +88,7 @@
   </link>
   <joint
     name="rotate_joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 0 0.0114"
       rpy="0 0 0" />
@@ -98,6 +98,11 @@
       link="rotate_part" />
     <axis
       xyz="0 0 1" />
+    <limit
+      effort="1.5"
+      lower="-4.71239"
+      upper="4.71239"
+      velocity="5" />
   </joint>
   <link
     name="link1">
@@ -141,7 +146,7 @@
   </link>
   <joint
     name="link1_joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0 0 0.108"
       rpy="0 0 0" />
@@ -151,6 +156,11 @@
       link="link1" />
     <axis
       xyz="0 1 0" />
+    <limit
+      effort="1.5"
+      lower="-2.61799"
+      upper="0.349066"
+      velocity="5" />
   </joint>
   <link
     name="link2">
@@ -194,7 +204,7 @@
   </link>
   <joint
     name="link2_joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.32 0 0"
       rpy="0 0 0" />
@@ -204,6 +214,11 @@
       link="link2" />
     <axis
       xyz="0 1 0" />
+    <limit
+      effort="1.5"
+      lower="-0.349066"
+      upper="2.61799"
+      velocity="5" />
   </joint>
   <link
     name="link3">
@@ -247,7 +262,7 @@
   </link>
   <joint
     name="link3_joint"
-    type="continuous">
+    type="revolute">
     <origin
       xyz="0.26 0 -0.01025"
       rpy="0 0 0" />
@@ -257,6 +272,11 @@
       link="link3" />
     <axis
       xyz="0 1 0" />
+    <limit
+      effort="1.5"
+      lower="-0.349066"
+      upper="2.61799"
+      velocity="5" />
   </joint>
   <link
     name="gripper">
