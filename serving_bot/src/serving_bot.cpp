@@ -577,8 +577,6 @@ int main(int argc, char** argv)
 
     sync.speech("Ready to order");         //make sound
 
-    sync.Get_Drink(MACCHIATO);
-
     while(true){
         if(sync.nowPosition == 1){       //Robot in table
             sync.speech("I give drinks that you orderd.");         //make sound
