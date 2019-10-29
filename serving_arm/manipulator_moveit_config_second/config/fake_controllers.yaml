@@ -1,0 +1,12 @@
+controller_list:
+  - name: fake_manipulator_controller
+    type: last point
+    joints:
+      - rotate_joint
+      - link1_joint
+      - link2_joint
+      - link3_joint
+
+initial:
+  - group: manipulator
+    pose: ready

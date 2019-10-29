@@ -1,0 +1,1 @@
+controller_joint_names: ['rotate_joint', 'link1_joint', 'link2_joint', 'link3_joint', 'gripper_joint', 'camera_joint', ]

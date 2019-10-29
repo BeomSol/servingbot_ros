@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: manipulator_description
+    relative_path: urdf/manipulator_description.urdf
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/manipulator_description.srdf
+  CONFIG:
+    author_name: Ko Donghyun
+    author_email: gdh8652@gmail.com
+    generated_timestamp: 1567061631

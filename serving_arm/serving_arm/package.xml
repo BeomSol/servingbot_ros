@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>serving_arm</name>
+  <version>0.1.0</version>
+  <description>
+    ROS packages for the manipulator (meta package)
+  </description>
+  <license>Apache 2.0</license>
+  <author email="bumsol95@gmail.com">Beomsol Park</author>
+  <maintainer email="bumsol95@gmail.com">Beomsol Park</maintainer>
+  <buildtool_depend>catkin</buildtool_depend>
+  <exec_depend>realsense2_camera</exec_depend>
+  <exec_depend>find_object_2d</exec_depend>
+  <exec_depend>manipulator_description</exec_depend>
+  <exec_depend>manipulator_moveit_config_second</exec_depend>
+  <export><metapackage/></export>
+</package>

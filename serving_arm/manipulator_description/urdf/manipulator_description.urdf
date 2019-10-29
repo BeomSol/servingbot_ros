@@ -1,0 +1,367 @@
+<robot
+  name="manipulator_description">
+  <link name="dummy">
+     </link>
+  <link
+    name="base_mani">
+    <inertial>
+      <origin
+        xyz="6.6822E-07 0.0053488 -5.8753E-07"
+        rpy="1.5708 0 0" />
+      <mass
+        value="0.040479" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_description/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_description/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="dummy_joint" type="fixed">
+     <parent link="dummy"/>
+     <child link="base_mani"/>
+   </joint>
+  <link
+    name="rotate_part">
+    <inertial>
+      <origin
+        xyz="-0.050253 0.076151 2.2843E-05"
+        rpy="1.5708 0 0" />
+      <mass
+        value="2.6103" />
+      <inertia
+        ixx="0.0021398"
+        ixy="-0.0043403"
+        ixz="-3.039E-06"
+        iyy="0.017562"
+        iyz="-1.1696E-06"
+        izz="0.019702" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_description/meshes/rotate_part.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_description/meshes/rotate_part.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rotate_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.0114"
+      rpy="0 0 0" />
+    <parent
+      link="base_mani" />
+    <child
+      link="rotate_part" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="link1">
+    <inertial>
+      <origin
+        xyz="0.24867 0.019981 -2.7435E-07"
+        rpy="1.5708 0 0" />
+      <mass
+        value="1.0315" />
+      <inertia
+        ixx="0.00048633"
+        ixy="0.0007461"
+        ixz="2.5615E-09"
+        iyy="0.0084803"
+        iyz="5.6078E-09"
+        izz="0.0085023" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_description/meshes/link1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_description/meshes/link1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link1_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.108"
+      rpy="0 0 0" />
+    <parent
+      link="rotate_part" />
+    <child
+      link="link1" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="link2">
+    <inertial>
+      <origin
+        xyz="0.20467 0.0073255 -6.6207E-07"
+        rpy="1.5708 0 0" />
+      <mass
+        value="0.6446" />
+      <inertia
+        ixx="0.00014728"
+        ixy="0.00038657"
+        ixz="8.9937E-10"
+        iyy="0.0027407"
+        iyz="5.7461E-09"
+        izz="0.0027996" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_description/meshes/link2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_description/meshes/link2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link2_joint"
+    type="continuous">
+    <origin
+      xyz="0.32 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link1" />
+    <child
+      link="link2" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="link3">
+    <inertial>
+      <origin
+        xyz="0.053723 0.0050691 -6.9389E-18"
+        rpy="1.5708 0 0" />
+      <mass
+        value="0.073222" />
+      <inertia
+        ixx="0"
+        ixy="0"
+        ixz="0"
+        iyy="0"
+        iyz="0"
+        izz="0" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_description/meshes/link3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_description/meshes/link3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="link3_joint"
+    type="continuous">
+    <origin
+      xyz="0.26 0 -0.01025"
+      rpy="0 0 0" />
+    <parent
+      link="link2" />
+    <child
+      link="link3" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="gripper">
+    <inertial>
+      <origin
+        xyz="0.027929 3.3689E-11 -2.7803E-05"
+        rpy="1.5708 0 0" />
+      <mass
+        value="0.0098502" />
+      <inertia
+        ixx="6.3744E-06"
+        ixy="4.5585E-15"
+        ixz="-4.9187E-09"
+        iyy="6.8614E-06"
+        iyz="5.4796E-16"
+        izz="5.7066E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_description/meshes/gripper.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_description/meshes/gripper.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="gripper_joint"
+    type="fixed">
+    <origin
+      xyz="0.155 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="link3" />
+    <child
+      link="gripper" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="camera_link">
+    <inertial>
+      <origin
+        xyz="-0.013049 -6.0566E-05 -0.0002462"
+        rpy="1.5708 0 0" />
+      <mass
+        value="0.044752" />
+      <inertia
+        ixx="1.6244E-06"
+        ixy="-1.0057E-12"
+        ixz="3.401E-07"
+        iyy="1.8076E-06"
+        iyz="-2.5069E-09"
+        izz="1.8322E-07" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_description/meshes/camera_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="1.5708 0 0" />
+      <geometry>
+        <mesh
+          filename="package://manipulator_description/meshes/camera_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera_joint"
+    type="fixed">
+    <origin
+      xyz="0.113 0 0.055"
+      rpy="0 0 0" />
+    <parent
+      link="link3" />
+    <child
+      link="camera_link" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>
