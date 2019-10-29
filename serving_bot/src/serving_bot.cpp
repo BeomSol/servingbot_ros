@@ -255,7 +255,7 @@ class TfExample
         int reachedCount = 0;
         while(true){
             if(Obj[drink].isSet){
-                pose = Make_Position(Obj[drink].posx,Obj[drink].posy,Obj[drink].posz-0.015);
+                pose = Make_Position(Obj[drink].posx,Obj[drink].posy,Obj[drink].posz+0.025);
                 break;
             }
             else if(error_count==75){
@@ -325,7 +325,7 @@ class TfExample
         {
             kinematic_state->copyJointGroupPositions(joint_model_group, joint_values);
 
-            pose = Make_Position(Obj[drink].posx*3/4,Obj[drink].posy*3/4,Obj[drink].posz-0.03);
+            pose = Make_Position(Obj[drink].posx*3/4,Obj[drink].posy*3/4,Obj[drink].posz);
             bool found_ik2 = kinematic_state->setFromIK(joint_model_group, pose, 10, 1);
             kinematic_state->copyJointGroupPositions(joint_model_group, pre_joint_values);
 
