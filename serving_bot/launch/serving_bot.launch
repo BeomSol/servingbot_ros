@@ -1,0 +1,13 @@
+<launch>
+  <include file="$(find manipulator_moveit_config_second)/launch/planning_context.launch">
+    <arg name="load_robot_description" value="true"/>
+  </include>
+
+  <node name="serving_bot"
+        pkg="serving_bot"
+        type="serving_bot"
+        respawn="false" output="screen">
+    <rosparam command="load"
+              file="$(find manipulator_moveit_config_second)/config/kinematics.yaml"/>
+  </node>
+</launch>
