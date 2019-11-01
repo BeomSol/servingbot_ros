@@ -20,7 +20,7 @@ $ sudo apt-get install ros-kinetic-global-planner
 $ sudo apt-get install ros-kinetic-dwa-local-planner
 $ sudo apt-get install ros-kinetic-sensor-msgs
 ```
-If you have errors about turtlebot3_msgs, download the package.
+#### If you have errors about turtlebot3_msgs, download the package.
 ```bash
 $ cd ~/catkin_ws/src
 $ git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
@@ -31,15 +31,15 @@ $ git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
 $ sudo apt-get install ros-kinetic-moveit
 ```
 - #### Install [Realsense SDK 2.0](https://github.com/BeomSol/servingbot_ros/tree/master/serving_arm/realsense_ros)
-This robot used librealsense v2.10.3 and realsense_ros 2.0.4.
+  #### This robot used librealsense v2.10.3 and realsense_ros 2.0.4.
 
-##PC Setting 
-###Time synchronization
+## PC Setting 
+### Time synchronization
 If this command doesn't work, you will have to fix it manually.
 ```bash
 $ sudo ntpdate -u time.bora.net
 ```
-###Power mode setting for Jetson TX2
+### Power mode setting for Jetson TX2
 <img src="./img/Jetson_TX2_power_mode.png"  class="center">
 ```bash
 $ sudo nvpmodel -m {mode_num}
