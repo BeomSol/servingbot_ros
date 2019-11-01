@@ -31,7 +31,7 @@ $ git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
 $ sudo apt-get install ros-kinetic-moveit
 ```
 - #### Install [Realsense SDK 2.0](https://github.com/BeomSol/servingbot_ros/tree/master/serving_arm/realsense_ros)
-  #### This robot used librealsense v2.10.3 and realsense_ros 2.0.4.
+ #### This robot used librealsense v2.10.3 and realsense_ros 2.0.4.
 
 ## PC Setting 
 ### Time synchronization
@@ -41,6 +41,7 @@ $ sudo ntpdate -u time.bora.net
 ```
 ### Power mode setting for Jetson TX2
 <img src="./img/Jetson_TX2_power_mode.png"  class="center">
+
 ```bash
 $ sudo nvpmodel -m {mode_num}
 ```
