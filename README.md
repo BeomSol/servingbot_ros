@@ -3,7 +3,18 @@ These are packages for mobile manipulator control.
 ## Node Communication
 <img src="./img/Mobile_Manpulator_Node.jpg"  class="center">
 
-## Installation Instructions
+## Reference site
+### Mobile robot
+- #### RPlidar_ros : http://wiki.ros.org/rplidar
+- #### Turtlebot3 : http://wiki.ros.org/turtlebot3
+- #### Navigation tuning : http://emanual.robotis.com/docs/en/platform/turtlebot3/navigation/#tuning-guide
+### Manipulator
+- #### MoveIt : https://moveit.ros.org/
+- #### Realsense : http://wiki.ros.org/RealSense
+- #### Realsense in Jetson TX2 : https://www.jetsonhacks.com/2017/08/14/intel-realsense-camera-librealsense-nvidia-jetson-tx-dev-kits/
+- #### Find_object : http://wiki.ros.org/find_object_2d
+
+## Requirements
 ### Mobile robot
 - #### Install [SLAM and Navigation Package](http://emanual.robotis.com/docs/en/platform/turtlebot3/pc_setup/#install-dependent-ros-packages)
 ```bash
@@ -33,7 +44,7 @@ $ sudo apt-get install ros-kinetic-moveit
 - #### Install [Realsense SDK 2.0](https://github.com/BeomSol/servingbot_ros/tree/master/serving_arm/realsense_ros)
  #### This robot used librealsense v2.10.3 and realsense_ros 2.0.4.
 
-## PC Setting 
+## Setup for embedded PC 
 ### Time synchronization
 If this command doesn't work, you will have to fix it manually.
 ```bash
@@ -43,5 +54,85 @@ $ sudo ntpdate -u time.bora.net
 <img src="./img/Jetson_TX2_power_mode.png"  class="center">
 
 ```bash
-$ sudo nvpmodel -m {mode_num}
+$ roslaunch servingbot_bringup servingbot_robot.launch
+```
+
+## How to run "ServingBot"
+### Run Mobile Manipulator
+- #### Mobile robot
+#### Excute the Mobile robot with navigation
+1.```bash
+$ roslaunch servingbot_navigation servingbot_navigation_all.launch
+```
+- #### Manipulator
+#### Excute the Manipulator with find objects
+2.```bash
+$ roslaunch manipulator_moveit_config_second manipulator_all.launch
+```
+- #### Simple_navigation_goal
+#### Excute the package that stores location information
+3.```bash
+$ rosrun simple_navigation_goals_pose simple_navigation_goals_pose
+```
+- #### App communication
+#### Receive order information from Tablet
+4.```bash
+$ rosrun rosjava_catkin_package_a my_pub_sub_tutorial com.github.rosjava.rosjava_catkin_package_a.my_pub_sub_tutorial.Talker
+```
+### Run only Mobile robot
+- #### Bringup
+#### Excute the robot
+```bash
+$ roslaunch servingbot_bringup servingbot_robot.launch
+```
+- #### Mapping
+#### Excute slam with gmapping
+```bash
+$ roslaunch servingbot_slam servingbot_slam.launch
+```
+#### Teleoperation using keyboard
+```bash
+$ roslaunch servingbot_teleop servingbot_teleop_key.launch
+```
+#### Save the map
+```bash
+$ rosrun map_server map_saver -f {file_name}
+```
+- #### Navigation
+#### Excute the navigation package
+```bash
+$ roslaunch servingbot_navigation servingbot_navigation.launch
+```
+#### Excute the package that stores location information
+```bash
+$ rosrun simple_navigation_goals_pose simple_navigation_goals_pose
+```
+### Run only Manipulator
+- #### Bringup
+#### Excute the robot
+```bash
+$ roslaunch servingbot_bringup servingbot_core.launch
+```
+- #### MoveIt
+#### Direct control of the Manipulator with Rviz
+```bash
+$ roslaunch manipulator_moveit_config_second demo.launch
+```
+### Etc
+- #### Excute realsense device
+```bash
+$ roslaunch realsense2_camera rs_camera.launch
+```
+- #### Excute find objects
+#### Excute only find objects
+```bash
+$ roslaunch find_object_2d find_object_3d.launch
+```
+#### Excute find objects with D415
+```bash
+$ roslaunch find_object_2d find_object_3d_D415.launch
+```
+- #### Communication between Mobile robot and Manipulator
+```bash
+$ roslaunch serving_bot serving_bot.launch
 ```
