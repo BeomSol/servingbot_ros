@@ -21,7 +21,7 @@ These are packages for mobile manipulator control.
 $ sudo apt-get install ros-kinetic-move-base
 $ sudo apt-get install ros-kinetic-gmapping
 ```
-#### If you include the packages about navigation-kinetic-devel, you don't need you install below components
+ If you include the packages about navigation-kinetic-devel, you don't need you install below components
 ```bash
 $ sudo apt-get install ros-kinetic-amcl
 $ sudo apt-get install ros-kinetic-rosserial-python
@@ -31,7 +31,7 @@ $ sudo apt-get install ros-kinetic-global-planner
 $ sudo apt-get install ros-kinetic-dwa-local-planner
 $ sudo apt-get install ros-kinetic-sensor-msgs
 ```
-#### If you have errors about turtlebot3_msgs, download the package.
+ If you have errors about turtlebot3_msgs, download the package.
 ```bash
 $ cd ~/catkin_ws/src
 $ git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
@@ -60,61 +60,61 @@ $ roslaunch servingbot_bringup servingbot_robot.launch
 ## How to run "ServingBot"
 ### Run Mobile Manipulator
 - #### Mobile robot
-#### Excute the Mobile robot with navigation
-1.```bash
+ Excute the Mobile robot with navigation
+1. ```bash
 $ roslaunch servingbot_navigation servingbot_navigation_all.launch
 ```
 - #### Manipulator
-#### Excute the Manipulator with find objects
-2.```bash
+ Excute the Manipulator with find objects
+2. ```bash
 $ roslaunch manipulator_moveit_config_second manipulator_all.launch
 ```
 - #### Simple_navigation_goal
-#### Excute the package that stores location information
-3.```bash
+ Excute the package that stores location information
+3. ```bash
 $ rosrun simple_navigation_goals_pose simple_navigation_goals_pose
 ```
 - #### App communication
-#### Receive order information from Tablet
-4.```bash
+ Receive order information from Tablet
+4. ```bash
 $ rosrun rosjava_catkin_package_a my_pub_sub_tutorial com.github.rosjava.rosjava_catkin_package_a.my_pub_sub_tutorial.Talker
 ```
 ### Run only Mobile robot
 - #### Bringup
-#### Excute the robot
+ Excute the robot
 ```bash
 $ roslaunch servingbot_bringup servingbot_robot.launch
 ```
 - #### Mapping
-#### Excute slam with gmapping
+ Excute slam with gmapping
 ```bash
 $ roslaunch servingbot_slam servingbot_slam.launch
 ```
-#### Teleoperation using keyboard
+ Teleoperation using keyboard
 ```bash
 $ roslaunch servingbot_teleop servingbot_teleop_key.launch
 ```
-#### Save the map
+ Save the map
 ```bash
 $ rosrun map_server map_saver -f {file_name}
 ```
 - #### Navigation
-#### Excute the navigation package
+ Excute the navigation package
 ```bash
 $ roslaunch servingbot_navigation servingbot_navigation.launch
 ```
-#### Excute the package that stores location information
+ Excute the package that stores location information
 ```bash
 $ rosrun simple_navigation_goals_pose simple_navigation_goals_pose
 ```
 ### Run only Manipulator
 - #### Bringup
-#### Excute the robot
+ Excute the robot
 ```bash
 $ roslaunch servingbot_bringup servingbot_core.launch
 ```
 - #### MoveIt
-#### Direct control of the Manipulator with Rviz
+ Direct control of the Manipulator with Rviz
 ```bash
 $ roslaunch manipulator_moveit_config_second demo.launch
 ```
@@ -124,11 +124,11 @@ $ roslaunch manipulator_moveit_config_second demo.launch
 $ roslaunch realsense2_camera rs_camera.launch
 ```
 - #### Excute find objects
-#### Excute only find objects
+ Excute only find objects
 ```bash
 $ roslaunch find_object_2d find_object_3d.launch
 ```
-#### Excute find objects with D415
+ Excute find objects with D415
 ```bash
 $ roslaunch find_object_2d find_object_3d_D415.launch
 ```
