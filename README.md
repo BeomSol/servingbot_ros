@@ -60,19 +60,22 @@ $ roslaunch servingbot_bringup servingbot_robot.launch
 ## How to run "ServingBot"
 ### Run Mobile Manipulator
 - #### Mobile robot
- Excute the Mobile robot with navigation
+  Excute the Mobile robot with navigation
 
 1. <pre><code> $ roslaunch servingbot_navigation servingbot_navigation_all.launch </code></pre>
+
 - #### Manipulator
- Excute the Manipulator with find objects
+  Excute the Manipulator with find objects
 
 2. <pre><code> $ roslaunch manipulator_moveit_config_second manipulator_all.launch </code></pre>
+
 - #### Simple_navigation_goal
- Excute the package that stores location information
+  Excute the package that stores location information
 
 3. <pre><code> $ rosrun simple_navigation_goals_pose simple_navigation_goals_pose </code></pre>
+
 - #### App communication
- Receive order information from Tablet
+  Receive order information from Tablet
 
 4. <pre><code> $ rosrun rosjava_catkin_package_a my_pub_sub_tutorial com.github.rosjava.rosjava_catkin_package_a.my_pub_sub_tutorial.Talker </code></pre>
 
@@ -83,35 +86,35 @@ $ roslaunch servingbot_bringup servingbot_robot.launch
 $ roslaunch servingbot_bringup servingbot_robot.launch
 ```
 - #### Mapping
- Excute slam with gmapping
+  Excute slam with gmapping
 ```bash
 $ roslaunch servingbot_slam servingbot_slam.launch
 ```
- Teleoperation using keyboard
+  Teleoperation using keyboard
 ```bash
 $ roslaunch servingbot_teleop servingbot_teleop_key.launch
 ```
- Save the map
+  Save the map
 ```bash
 $ rosrun map_server map_saver -f {file_name}
 ```
 - #### Navigation
- Excute the navigation package
+  Excute the navigation package
 ```bash
 $ roslaunch servingbot_navigation servingbot_navigation.launch
 ```
- Excute the package that stores location information
+  Excute the package that stores location information
 ```bash
 $ rosrun simple_navigation_goals_pose simple_navigation_goals_pose
 ```
 ### Run only Manipulator
 - #### Bringup
- Excute the robot
+  Excute the robot
 ```bash
 $ roslaunch servingbot_bringup servingbot_core.launch
 ```
 - #### MoveIt
- Direct control of the Manipulator with Rviz
+  Direct control of the Manipulator with Rviz
 ```bash
 $ roslaunch manipulator_moveit_config_second demo.launch
 ```
@@ -121,11 +124,11 @@ $ roslaunch manipulator_moveit_config_second demo.launch
 $ roslaunch realsense2_camera rs_camera.launch
 ```
 - #### Excute find objects
- Excute only find objects
+  Excute only find objects
 ```bash
 $ roslaunch find_object_2d find_object_3d.launch
 ```
- Excute find objects with D415
+  Excute find objects with D415
 ```bash
 $ roslaunch find_object_2d find_object_3d_D415.launch
 ```
