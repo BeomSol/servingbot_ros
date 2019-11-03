@@ -61,24 +61,18 @@ $ roslaunch servingbot_bringup servingbot_robot.launch
 ### Run Mobile Manipulator
 - #### Mobile robot
  Excute the Mobile robot with navigation
-
-1.``` $ roslaunch servingbot_navigation servingbot_navigation_all.launch 
-```
+1. <pre><code> $ roslaunch servingbot_navigation servingbot_navigation_all.launch </code></pre>
 - #### Manipulator
  Excute the Manipulator with find objects
 
-2.``` $ roslaunch manipulator_moveit_config_second manipulator_all.launch 
-```
+2. <pre><code> $ roslaunch manipulator_moveit_config_second manipulator_all.launch </code></pre>
 - #### Simple_navigation_goal
  Excute the package that stores location information
 
-3.```$ rosrun simple_navigation_goals_pose simple_navigation_goals_pose
-```
+3. <pre><code> $ rosrun simple_navigation_goals_pose simple_navigation_goals_pose </code></pre>
 - #### App communication
  Receive order information from Tablet
-
-4.```$ rosrun rosjava_catkin_package_a my_pub_sub_tutorial com.github.rosjava.rosjava_catkin_package_a.my_pub_sub_tutorial.Talker
-```
+4. <pre><code> $ rosrun rosjava_catkin_package_a my_pub_sub_tutorial com.github.rosjava.rosjava_catkin_package_a.my_pub_sub_tutorial.Talker </code></pre>
 
 ### Run only Mobile robot
 - #### Bringup
