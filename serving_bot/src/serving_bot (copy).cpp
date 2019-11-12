@@ -247,11 +247,12 @@ class TfExample
 
     void posture(void){             //Set the motor1 to first posture
         posture_pub.publish(grip_speed);
-        ros::WallDuration(2.0).sleep();
+        ros::WallDuration(1).sleep();
     }
 
     bool Get_Drink(int drink){      //Bring drink when correct with order
         int error_count = 1;
+        int reachedCount = 0;
         while(true){
             if(Obj[drink].isSet){
                 pose = Make_Position(Obj[drink].posx,Obj[drink].posy,Obj[drink].posz+0.025);
@@ -261,20 +262,20 @@ class TfExample
                 obj_fnd = 0;
                 speech("I can't find object.");
                 reached = false;
-                joint_states.position = {-2.348,1.629,0.813,0.0};
+                joint_states.position = {-2.088,1.160,1.328,0};
                 joint_control_pub.publish(joint_states);
                 return false;
             }
             else if(error_count==45){
                 obj_fnd = 1;
                 reached = false;
-                joint_states.position = {-2.348,1.629,0.813,0.5};
+                joint_states.position = {-2.088,1.160,1.328,0.5};
                 joint_control_pub.publish(joint_states);
             }
             else if(error_count==15){
                 obj_fnd = -1;
                 reached = false;
-                joint_states.position = {-2.348,1.629,0.813,-0.5};
+                joint_states.position = {-2.088,1.160,1.328,-0.5};
                 joint_control_pub.publish(joint_states);
             }
             ros::WallDuration(0.20).sleep();
@@ -300,7 +301,6 @@ class TfExample
                                                     {-3.660,-1.837,1.726,0.112}};
 
         int bask_num = 0;
-        int reachedCount = 0;
 
         for(int i = 0;i<5;i++){
             if(i%2==0 && basket[i] == 0){
@@ -405,22 +405,20 @@ class TfExample
         if(basket[bask_num] != orderTable)
             return;
 
-        basket[bask_num] = 0;
-
         int reachedCount = 0;
 
-        const static double joint_basket[5] = {-2.603, -2.870,-3.136,-3.397,-3.660};        // rotate joint
-        const static double joint_basket_get[4] = {-2.603,-1.830,1.727,0.136};
-        const static double joint_basket_up[4] = {-2.603,-1.700,0.710,0.910};
+        const static double joint_basket[5] = {-2.599, -2.870,-3.136,-3.397,-3.660};        // rotate joint
+        const static double joint_basket_get[4] = {-2.599,-1.830,1.727,0.136};
+        const static double joint_basket_up[4] = {-2.599,-1.700,0.710,0.910};
 
 
-        const static double joint_give_above[4] =  {0.400,-1.420,0.970,0.454};
-        const static double joint_give_table[5][4] = {{0.400,-1.280,0.971,0.315},
-                                                      {0.200,-1.390,1.084,0.321},
-                                                      {0.000,-1.380,1.083,0.301},
-                                                      {-0.200,-1.390,1.084,0.321},
-                                                      {-0.400,-1.280,0.971,0.315}};
-        const static double joint_give_after[4] = {0.400,-1.855,1.594,0.298};
+        const static double joint_give_above[4] =  {0.400,-1.242,0.937,0.344};
+        const static double joint_give_table[5][4] = {{0.400,-1.131,1.201,-0.085},
+                                                      {0.200,-1.227,1.314,-0.079},
+                                                      {0.000,-1.224,1.313,-0.097},
+                                                      {-0.200,-1.227,1.314,-0.079},
+                                                      {-0.400,-1.131,1.201,-0.085}};
+        const static double joint_give_after[4] = {0.400,-1.748,1.898,-0.169};
 
         while(true){
             if(!reached){
@@ -579,6 +577,8 @@ int main(int argc, char** argv)
 
     sync.speech("Ready to order");         //make sound
 
+    sync.Get_Drink(AMERICANO);
+/*
     while(true){
         if(sync.nowPosition == 1){       //Robot in table
             sync.speech("I give drinks that you orderd.");         //make sound
@@ -618,6 +618,6 @@ int main(int argc, char** argv)
             ros::WallDuration(0.000001).sleep();        //make delay to change flag
 
     }
-
+*/
     return 0;
 }

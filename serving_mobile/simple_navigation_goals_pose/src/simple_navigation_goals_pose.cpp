@@ -25,9 +25,9 @@ float init_cov_arr[36] = {
 bool moveToGoal(double xGoal, double yGoal,double wGoal);
 
 /** declare the coordinates of interest **/
-double table_x[10] = {1.65, 2.00, 10.69};
-double table_y[10] = {7.90, 4.05, 0.67};
-double table_w[10] = {3.10, 3.10, 2.5};
+double table_x[10] = {0.34, 1.16};
+double table_y[10] = {-0.60, -4.34};
+double table_w[10] = {0.3, 3.44};
 
 bool goalReached = false;
 
@@ -78,42 +78,42 @@ void tableCallBack(const std_msgs::Int32::ConstPtr& msg){
 }
 
 int main(int argc, char** argv){
-        ros::init(argc, argv, "map_navigation_node");
-        ros::NodeHandle n;
-        pub = n.advertise<geometry_msgs::PoseWithCovarianceStamped>("/initialpose", 100);
-        ros::Publisher goal_pub = n.advertise<std_msgs::Int32>("point_arrival",100);
+    ros::init(argc, argv, "map_navigation_node");
+    ros::NodeHandle n;
+    pub = n.advertise<geometry_msgs::PoseWithCovarianceStamped>("/initialpose", 100);
+    ros::Publisher goal_pub = n.advertise<std_msgs::Int32>("point_arrival",100);
 
-        ros::Subscriber amcl_pose_sub = n.subscribe("/amcl_pose", 100, poseCallback);
-        ros::Subscriber table_sub = n.subscribe("/table_num", 100, tableCallBack);
+    ros::Subscriber amcl_pose_sub = n.subscribe("/amcl_pose", 100, poseCallback);
+    ros::Subscriber table_sub = n.subscribe("/table_num", 100, tableCallBack);
 
-        //sc.playWave(path_to_sounds+"short_buzzer.wav");
-        //tell the action client that we want to spin a thread by default
+    //sc.playWave(path_to_sounds+"short_buzzer.wav");
+    //tell the action client that we want to spin a thread by default
 
 
-        while(true){
-            if(!getTable){
-                ros::WallDuration(0.000001).sleep();        //make delay to change flag
-                ros::spinOnce();
-                continue;
-            }
-
-            goalReached = moveToGoal(table_x[orderTable], table_y[orderTable],table_w[orderTable]);
-
-            if (goalReached){
-                std_msgs::Int32 goal_;
-                if(orderTable == 0)
-                    goal_.data = 2;
-                else
-                    goal_.data = 1;
-                goal_pub.publish(goal_);
-                ROS_INFO("Arrived Table!");
-            }else{
-                ROS_INFO("Hard Luck!");
-            }
-            getTable = false;
+    while(true){
+        if(!getTable){
+            ros::WallDuration(0.000001).sleep();        //make delay to change flag
             ros::spinOnce();
+            continue;
         }
-        return 0;
+
+        goalReached = moveToGoal(table_x[orderTable], table_y[orderTable],table_w[orderTable]);
+
+        if (goalReached){
+            std_msgs::Int32 goal_;
+            if(orderTable == 0)
+                goal_.data = 2;
+            else
+                goal_.data = 1;
+            goal_pub.publish(goal_);
+            ROS_INFO("Arrived Table!");
+        }else{
+            ROS_INFO("Hard Luck!");
+        }
+        getTable = false;
+        ros::spinOnce();
+    }
+    return 0;
 }
 
 bool moveToGoal(double xGoal, double yGoal, double wGoal){
