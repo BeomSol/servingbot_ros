@@ -44,6 +44,9 @@ $ sudo apt-get install ros-kinetic-moveit
 - #### Install [Realsense SDK 2.0](https://github.com/BeomSol/servingbot_ros/tree/master/serving_arm/realsense_ros)
  #### This robot used librealsense v2.10.3 and realsense_ros 2.0.4.
 
+###Application
+- #### Download [App](https://github.com/BeomSol/rosjava_catkin_package_a)
+
 ## Setup for embedded PC 
 ### Time synchronization
 If this command doesn't work, you will have to fix it manually.
