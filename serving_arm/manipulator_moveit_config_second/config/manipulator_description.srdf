@@ -24,22 +24,10 @@
         <joint name="rotate_joint" value="0" />
     </group_state>
     <group_state name="ready" group="manipulator">
-        <joint name="link1_joint" value="-2.088" />
-        <joint name="link2_joint" value="1.160" />
-        <joint name="link3_joint" value="1.328" />
+        <joint name="link1_joint" value="-2.348" />
+        <joint name="link2_joint" value="1.629" />
+        <joint name="link3_joint" value="0.813" />
         <joint name="rotate_joint" value="0" />
-    </group_state>
-    <group_state name="ready_place" group="manipulator">
-        <joint name="link1_joint" value="-1.8843" />
-        <joint name="link2_joint" value="1.5583" />
-        <joint name="link3_joint" value="1.6398" />
-        <joint name="rotate_joint" value="-3.1416" />
-    </group_state>
-    <group_state name="place" group="manipulator">
-        <joint name="link1_joint" value="-1.3138" />
-        <joint name="link2_joint" value="1.705" />
-        <joint name="link3_joint" value="1.1997" />
-        <joint name="rotate_joint" value="-3.1416" />
     </group_state>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="dummy" />
