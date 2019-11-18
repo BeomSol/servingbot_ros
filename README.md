@@ -3,6 +3,9 @@ These are packages for mobile manipulator control.
 ## Node Communication
 <img src="./img/Mobile_Manpulator_Node.jpg"  class="center">
 
+## Scenario video
+https://youtu.be/7-oHuMfVjQM
+
 ## Reference site
 ### Mobile robot
 - #### RPlidar_ros : http://wiki.ros.org/rplidar
