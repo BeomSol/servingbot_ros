@@ -252,6 +252,7 @@ class TfExample
 
     bool Get_Drink(int drink){      //Bring drink when correct with order
         int error_count = 1;
+
         while(true){
             if(Obj[drink].isSet){
                 pose = Make_Position(Obj[drink].posx,Obj[drink].posy,Obj[drink].posz+0.025);
