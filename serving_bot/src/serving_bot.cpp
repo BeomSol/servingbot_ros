@@ -414,13 +414,13 @@ class TfExample
         const static double joint_basket_up[4] = {-2.603,-1.700,0.710,0.910};
 
 
-        const static double joint_give_above[4] =  {0.400,-1.420,0.970,0.454};
-        const static double joint_give_table[5][4] = {{0.400,-1.280,0.971,0.315},
-                                                      {0.200,-1.390,1.084,0.321},
-                                                      {0.000,-1.380,1.083,0.301},
-                                                      {-0.200,-1.390,1.084,0.321},
-                                                      {-0.400,-1.280,0.971,0.315}};
-        const static double joint_give_after[4] = {0.400,-1.855,1.594,0.298};
+        const static double joint_give_above[4] =  {0.400,-1.450,0.970,0.454};
+        const static double joint_give_table[5][4] = {{0.400,-1.310,0.971,0.315},
+                                                      {0.200,-1.420,1.084,0.321},
+                                                      {0.000,-1.410,1.083,0.301},
+                                                      {-0.200,-1.420,1.084,0.321},
+                                                      {-0.400,-1.310,0.971,0.315}};
+        const static double joint_give_after[4] = {0.400,-1.855,1.554,0.298};
 
         while(true){
             if(!reached){
@@ -587,6 +587,7 @@ int main(int argc, char** argv)
                     sync.Give_Drink(i);
                 }
             }
+            sync.Give_Drink(0);
             sync.Go_Home();
         }
         else if(sync.nowPosition == 2){       // Robot in home
@@ -614,6 +615,7 @@ int main(int argc, char** argv)
                 sync.isOrder= false;
             }
         }
+
         else
             ros::WallDuration(0.000001).sleep();        //make delay to change flag
 
