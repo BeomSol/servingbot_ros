@@ -46,7 +46,11 @@ $ sudo apt-get install ros-kinetic-moveit
 ```
 #### Install [Realsense SDK 2.0](https://github.com/BeomSol/servingbot_ros/tree/master/serving_arm/realsense_ros)
  This robot used librealsense v2.10.3 and realsense_ros 2.0.4.
-
+#### Set object image folder location
+ Modify the objects folder path of find_object_3d_D415.launch
+```bash
+<param name="objects_path" value="~/Pictures/objects" type="str"/>
+```
 ### Application
  Download [App](https://github.com/BeomSol/rosjava_catkin_package_a)
 
