@@ -19,7 +19,7 @@ https://youtu.be/7-oHuMfVjQM
 
 ## Requirements
 ### Mobile robot
-- #### Install [SLAM and Navigation Package](http://emanual.robotis.com/docs/en/platform/turtlebot3/pc_setup/#install-dependent-ros-packages)
+#### Install [SLAM and Navigation Package](http://emanual.robotis.com/docs/en/platform/turtlebot3/pc_setup/#install-dependent-ros-packages)
 ```bash
 $ sudo apt-get install ros-kinetic-move-base
 $ sudo apt-get install ros-kinetic-gmapping
@@ -40,15 +40,15 @@ $ cd ~/catkin_ws/src
 $ git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
 ```
 ### Manipulator
-- #### Install [Moveit](https://moveit.ros.org/install/)
+#### Install [Moveit](https://moveit.ros.org/install/)
 ```bash
 $ sudo apt-get install ros-kinetic-moveit
 ```
-- #### Install [Realsense SDK 2.0](https://github.com/BeomSol/servingbot_ros/tree/master/serving_arm/realsense_ros)
- #### This robot used librealsense v2.10.3 and realsense_ros 2.0.4.
+#### Install [Realsense SDK 2.0](https://github.com/BeomSol/servingbot_ros/tree/master/serving_arm/realsense_ros)
+ This robot used librealsense v2.10.3 and realsense_ros 2.0.4.
 
-###Application
-- #### Download [App](https://github.com/BeomSol/rosjava_catkin_package_a)
+### Application
+ Download [App](https://github.com/BeomSol/rosjava_catkin_package_a)
 
 ## Setup for embedded PC 
 ### Time synchronization
